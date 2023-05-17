@@ -1,0 +1,41 @@
+﻿@page
+@model TeamManager.Pages.Manager.CreateEmployeeModel
+@{
+    ViewData["Title"] = "Create employee";
+}
+
+<h2>Create new employee</h2>
+
+<form class="row g-3" method="post" asp-antiforgery="true">
+    <div class="col-md-6">
+        <label asp-for="employee.name" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="employee.name" placeholder="Ivanov Ivan">
+    </div>
+    <div class="col-md-6">
+        <label asp-for="employee.email" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="employee.email" placeholder="Не обязательно, но желательно)">
+    </div>
+    <div class="col-12">
+        <label asp-for="employee.phone_number" class="form-label">Phone number</label>
+        <input type="text" class="form-control" asp-for="employee.phone_number" placeholder="89091234567">
+    </div>
+    <div class="col-12">
+        <label asp-for="employee.stack" class="form-label">Stack</label>
+        <input type="text" class="form-control" asp-for="employee.stack" placeholder="Any skills">
+    </div>
+    <div class="col-md-4">
+        <label asp-for="employee.exp" class="form-label">Level</label>
+        <select asp-for="employee.exp" class="form-select">
+            <option selected="">Choose...</option>
+            <option selected="">Intern</option>
+            <option selected="">senior</option>
+            <option selected="">middle</option>
+            <option selected="">junior</option>
+        </select>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" >Create</button>
+    </div>
+</form>
+

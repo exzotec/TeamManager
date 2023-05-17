@@ -1,0 +1,34 @@
+﻿@page
+@model TeamManager.Pages.Manager.CreateAssignmentModel
+@{
+    ViewData["Title"] = "Create assignment";
+}
+
+<h2>Добавление нового технического задания</h2>
+<form method="post"asp-antiforgery="true">
+    <p><label asp-for="assignment.title">Наименование:</label><br />
+        <input asp-for="assignment.title"/>
+    </p>
+    <p>
+        <label asp-for="assignment.requirements">Требования:</label><br />
+        <input asp-for="assignment.requirements" />
+    </p>
+    <p>
+        <label asp-for="assignment.desc">Описание:</label><br />
+        <input asp-for="assignment.desc" />
+    </p>
+    <p>
+        <label asp-for="assignment.deadline">Срок до:</label><br />
+        <input asp-for="assignment.deadline" />
+    </p>
+    <p>
+        <label asp-for="assignment.payment">Оплата:</label><br />
+        <input asp-for="assignment.payment" />
+    </p>
+    <p>
+        <label asp-for="assignment.stack">Стэк:</label><br />
+        <input asp-for="assignment.stack" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>
+

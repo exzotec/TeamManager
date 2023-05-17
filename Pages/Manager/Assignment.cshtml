@@ -1,0 +1,30 @@
+﻿@page
+@model TaskModel;
+@{
+    ViewData["Title"] = "Task Manager";
+}
+@using TeamManager.Data.Models;
+
+<h1>Assignment list</h1>
+<p><a asp-page="CreateAssignment">Добавить техническое задание</a></p>
+
+<table>
+    <tr>
+        <th>Имя</th>
+        <th>Почта</th>
+        <th>Телефон</th>
+        <th>Стэк</th>
+        <th>Опыт</th>
+    </tr>
+    @foreach (var task in Model.assignments)
+    {
+            <tr>
+                <th>@task.title</th>
+                <th>@task.requirements</th>
+                <th>@task.desc</th>
+                <th>@task.deadline</th>
+                <th>@task.payment</th>
+                <th>@task.stack</th>
+            </tr>
+    }
+</table>

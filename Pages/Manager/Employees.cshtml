@@ -1,0 +1,30 @@
+﻿@page
+@model EmployeesModel;
+@{
+    ViewData["Title"] = "Employee Manager";
+}
+@using TeamManager.Data.Models;
+
+<h1>Employees list</h1>
+<p><a asp-page="CreateEmployee">Добавить сотрудника</a></p>
+
+<table>
+    <tr>
+        <th>Имя</th>
+        <th>Почта</th>
+        <th>Телефон</th>
+        <th>Стэк</th>
+        <th>Опыт</th>
+    </tr>
+    @foreach(var employee in Model.Employees)
+    {
+        <tr>
+            <th>@employee.name</th>
+            <th>@employee.email</th>
+            <th>@employee.phone_number</th>
+            <th>@employee.stack</th>
+            <th>@employee.exp</th>
+        </tr>
+    }
+</table>
+
