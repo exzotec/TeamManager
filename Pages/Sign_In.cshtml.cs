@@ -19,7 +19,7 @@ namespace TeamManager.Pages
         //[Authorize]
         public async Task<IActionResult> OnPostAsync()
         {
-            return RedirectToPage("Index.chtml");
+            return RedirectToPage("Index");
         }
         public void OnGet()
         {
