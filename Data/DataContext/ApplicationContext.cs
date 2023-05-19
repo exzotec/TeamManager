@@ -8,7 +8,8 @@ namespace TeamManager.Data.DataContext
         public DbSet<Employee> employee { get; set; } = null!;
         public DbSet<AssignmentCard> assignmentCard { get; set; } = null!;
         public DbSet<userAuth> auth { get; set; } = null!;
-
+        public DbSet<client> Client { get; set; } = null!;
+    
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

@@ -19,7 +19,7 @@
         <div class="simlebar-sc" data-simplebar>
             <ul class="sidebar-menu tf">
                 <li class="sidebar-submenu">
-                    <a asp-page="Index" class="sidebar-menu-dropdown">
+                    <a href="Index.cshtml" class="sidebar-menu-dropdown">
                         <i class='bx bxs-home'></i>
                         <span>Dashboard</span>
                         <div class="dropdown-icon">
@@ -28,7 +28,7 @@
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a asp-page="Index">
+                            <a href='@Url.Page("/Index")'>
                                 Dashboard
                             </a>
                         </li>
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li>
-                            <a asp-page="Sign_In">
+                            <a href='@Url.Page("/Sign_In")'>
                                 User Login
                             </a>
                         </li>
@@ -50,7 +50,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-submenu">
-                    <a href="project.html" class="sidebar-menu-dropdown">
+                    <a href="Project.cshtml" class="sidebar-menu-dropdown">
                         <i class='bx bxs-bolt'></i>
                         <span>Project</span>
                         <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
@@ -871,30 +871,21 @@
                                 <div class="row">
                                     <div class="col-sm-6 mb-0">
                                         <div class="form-group">
-                                            <label>Project Name</label>
-                                            <input class="form-control" value="" type="text">
+                                            <label asp-for="assignment.title">Project Name</label>
+                                            <input asp-for="assignment.title" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 mb-0">
                                         <div class="form-group">
-                                            <label>Client</label>
-                                            <select class="select">
-                                                <option>Client 1</option>
-                                                <option>Client 2</option>
+                                            <label asp-for="assignment.client_id" class="control-label">Client</label>
+                                            <select asp-for="assignment.client_id" class="form-control" asp-items="@Model.ClientList">
+                                                <option value="">-- SELECT --</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-6 mb-0">
-                                        <div class="form-group">
-                                            <label>Start Date</label>
-                                            <div class="cal-icon">
-                                                <input class="form-control " type="date">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 mb-0">
+                                    <div class="col-sm-12 mb-0">
                                         <div class="form-group">
                                             <label>End Date</label>
                                             <div class="cal-icon">
@@ -904,19 +895,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-3 mb-0">
+                                    <div class="col-sm-6 mb-0">
                                         <div class="form-group">
                                             <label>Rate</label>
                                             <input placeholder="$50" class="form-control" value="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 mb-0">
-                                        <div class="form-group">
-                                            <label>&nbsp;</label>
-                                            <select class="select">
-                                                <option>Hourly</option>
-                                                <option selected>Fixed</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 mb-0">
