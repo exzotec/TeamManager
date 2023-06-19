@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Manager\user-profile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Pages\Manager\images\avatar\1.jpg" />
     <Content Include="Pages\Manager\images\avatar\1.png" />
     <Content Include="Pages\Manager\images\avatar\2.jpg" />
@@ -117,12 +121,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\user-profile.cshtml" />
     <None Include="wwwroot\sign-in.css" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Manager\user-profile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Manager\user-profile.cshtml" />
   </ItemGroup>
 
 </Project>

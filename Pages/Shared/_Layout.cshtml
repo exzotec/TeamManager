@@ -23,44 +23,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/grid.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/js/fullcalendar/css/main.min.css" asp-append-version="true">
+
 </head>
 
 <body class="sidebar-expand">
-    <!--My header-->
-    @*header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">TeamManager</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Manager/Employees">Employees</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Manager/Assignment">Assignments</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>*@
-    <!--My header end-->
 
-   @* <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
         <div class="sidebar-logo">
-            <a asp-page="Index">
-                <img src="./logo.svg" alt="Protend logo" style="width: 285px">
+            <a href="/Index">
+                <img src="./logo.svg" alt="Routeam logo" style="width: 285px">
             </a>
             <div class="sidebar-close" id="sidebar-close">
                 <i class='bx bx-left-arrow-alt'></i>
@@ -70,7 +43,7 @@
         <div class="simlebar-sc" data-simplebar>
             <ul class="sidebar-menu tf">
                 <li class="sidebar-submenu">
-                    <a asp-page="Index" class="sidebar-menu-dropdown">
+                    <a href="Index.cshtml" class="sidebar-menu-dropdown">
                         <i class='bx bxs-home'></i>
                         <span>Dashboard</span>
                         <div class="dropdown-icon">
@@ -79,104 +52,66 @@
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a asp-page="Index">
+                            <a href='@Url.Page("/Index")'>
                                 Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="user-profile.html">
+                            <a href='@Url.Page("/user-profile")'>
                                 User Profile
-                            </a>
-                        </li>*
-                        <li>
-                            <a asp-page="Sign_In">
-                                User Login
                             </a>
                         </li>
                         <li>
-                            <a href="new-account.html">
-                                New Account
+                            <a href="/Sign_In">
+                                User Login
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-submenu">
-                    <a asp-page="Project" class="sidebar-menu-dropdown">
+                    <a href="Project.cshtml" class="sidebar-menu-dropdown">
                         <i class='bx bxs-bolt'></i>
                         <span>Project</span>
                         <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a asp-page="Project">
+                            <a href='@Url.Page("/Project")'>
                                 Project
                             </a>
                         </li>
                         <li>
-                            <a href="project-details.html">
-                                Project Details
-                            </a>
-                        </li>
-                        <li>
-                            <a href="new-project.html">
-                                New Project
+                            <a href='@Url.Page("/Board")'>
+                                Projects Board
                             </a>
                         </li>
                     </ul>
                 </li>
-
                 <li class="sidebar-submenu">
-                    <a href="clients.html" class="sidebar-menu-dropdown current-menu-item">
+                    <a href="Client.chtml" class="sidebar-menu-dropdown">
                         <i class='bx bxs-user'></i>
                         <span>Client</span>
                         <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
                     </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content active">
+                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href="clients.html">
+                            <a href="/Clients">
                                 Manager Client
                             </a>
                         </li>
                         <li>
-                            <a href="client-details.html">
+                            <a href="/ClientDetails">
                                 Client Details
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="board.html">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>Board</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="calendar.html">
+                    <a href="/Calendar">
                         <i class='bx bx-calendar'></i>
                         <span>Calendar</span>
                     </a>
-                </li>
-
-                <li>
-                    <a href="message.html">
-                        <i class='bx bxs-message-rounded-detail'></i>
-                        <span>Message</span>
-                    </a>
-                </li>
-                <li class="sidebar-submenu">
-                    <a href="chart-apex.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-component'></i>
-                        <span>Components</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="chart-apex.html">
-                                Apex Charts
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
                 <li>
                     <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
@@ -184,15 +119,15 @@
                             <i class='bx bx-cog mr-10'></i>
                             <span>darkmode</span>
                         </div>
-
                         <span class="darkmode-switch"></span>
                     </a>
                 </li>
             </ul>
         </div>
+
         <!-- END SIDEBAR MENU -->
     </div>
-    <!-- END SIDEBAR -->*@
+    <!-- END SIDEBAR -->
 
     <!-- Main Header -->
     <div class="main-header">
@@ -293,7 +228,7 @@
                     <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span>Settings</span></a>
                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span>Lock screen</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="user-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>
+                    <a class="dropdown-item text-danger" href="/Sign_In"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>
                 </div>
             </div>
         </div>
@@ -336,28 +271,17 @@
     <script src="~/lib/bootstrap/dist/js/circle-progress/circle-progress.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/pg-calendar-master/pignose.calendar.full.min.js" asp-append-version="true"></script>
 
-@*    <script src="./libs/jquery/jquery.min.js"></script>
-    <script src="./libs/jquery/jquery-ui.min.js"></script> // //
-    <script src="./libs/moment/min/moment.min.js"></script>
-    <script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./libs/peity/jquery.peity.min.js"></script>
-    <script src="./libs/chart.js/Chart.bundle.min.js"></script>
-    <script src="./libs/owl.carousel/owl.carousel.min.js"></script>
-    <script src="./libs/bootstrap/js/bootstrap.min.js"></script> 
-    <script src="./js/countto.js"></script>  // //
-    <script src="./libs/circle-progress/circle-progress.min.js"></script> // //
-    <script src="./libs/pg-calendar-master/pignose.calendar.full.min.js"></script> // //
-    <script src="./libs/apexcharts/apexcharts.js"></script>
-    <script src="./libs/simplebar/simplebar.min.js"></script>
-*@
+    <script src="~/lib/bootstrap/dist/js/fullcalendar/js/main.min.js"></script>
+    
+    <script src="~/lib/bootstrap/dist/js/simplebar/simplebar.min.js" asp-append-version="true"></script>
     <!-- APP JS -->
     <script src="~/lib/bootstrap/dist/js/main.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/dashboard.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/shortcode.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/pages/dashboard.js" asp-append-version="true"></script>
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>*@
+    <script src="~/lib/bootstrap/dist/js/script.js"></script>
+
+    <script src="/lib/bootstrap/dist/js/pages/fullcalendar.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -5,137 +5,6 @@
 }
 @using TeamManager.Data.Models
 
-<!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-logo">
-            <a href="index.html">
-                <img src="./logo.svg" alt="Routeam logo" style="width: 285px">
-            </a>
-            <div class="sidebar-close" id="sidebar-close">
-                <i class='bx bx-left-arrow-alt'></i>
-            </div>
-        </div>
-        <!-- SIDEBAR MENU -->
-        <div class="simlebar-sc" data-simplebar>
-            <ul class="sidebar-menu tf">
-                <li class="sidebar-submenu">
-                    <a href="Index.cshtml" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-home'></i>
-                        <span>Dashboard</span>
-                        <div class="dropdown-icon">
-                            <i class='bx bx-chevron-down'></i>
-                        </div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href='@Url.Page("/Index")'>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="user-profile.html">
-                                User Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Page("/Sign_In")'>
-                                User Login
-                            </a>
-                        </li>
-                        <li>
-                            <a href="new-account.html">
-                               New Account
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-submenu">
-                    <a href="Project.cshtml" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-bolt'></i>
-                        <span>Project</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                        <a href='@Url.Page("/Project")'>
-                               Project
-                            </a>
-                        </li>
-                        <li>
-                            <a href="project-details.html">
-                                Project Details
-                            </a>
-                        </li>
-                        <li>
-                            <a href="new-project.html">
-                                New Project
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="sidebar-submenu">
-                    <a href="clients.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-user'></i>
-                        <span>Client</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="clients.html">
-                               Manager Client
-                            </a>
-                        </li>
-                        <li>
-                            <a href="client-details.html">
-                                Client Details
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="board.html">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>Board</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="calendar.html">
-                        <i class='bx bx-calendar'></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li class="sidebar-submenu">
-                    <a href="chart-apex.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-component' ></i>
-                        <span>Components</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="chart-apex.html">
-                                Apex Charts
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
-                        <div>
-                            <i class='bx bx-cog mr-10'></i>
-                            <span>darkmode</span>
-                        </div>
-
-                        <span class="darkmode-switch"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- END SIDEBAR MENU -->
-    </div>
-    <!-- END SIDEBAR -->
-
     <!-- MAIN CONTENT -->
     <div class="main">
 
@@ -887,9 +756,9 @@
                                 <div class="row">
                                     <div class="col-sm-12 mb-0">
                                         <div class="form-group">
-                                            <label>End Date</label>
+                                            <label asp-for="assignment.deadline">End Date</label>
                                             <div class="cal-icon">
-                                                <input class="form-control" type="date">
+                                                <input asp-for="assignment.deadline" class="form-control" type="date">
                                             </div>
                                         </div>
                                     </div>
@@ -897,14 +766,14 @@
                                 <div class="row">
                                     <div class="col-sm-6 mb-0">
                                         <div class="form-group">
-                                            <label>Rate</label>
-                                            <input placeholder="$50" class="form-control" value="" type="text">
+                                            <label asp-for="assignment.payment">Payment</label>
+                                            <input placeholder="$50" asp-for="assignment.payment" class="form-control" value="" type="text">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 mb-0">
                                         <div class="form-group">
-                                            <label>Priority</label>
-                                            <select class="select">
+                                            <label asp-for="assignment.priority">Priority</label>
+                                            <select asp-for="assignment.priority" class="select">
                                                 <option selected>High</option>
                                                 <option>Medium</option>
                                                 <option>Low</option>
@@ -913,8 +782,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea rows="4" class="form-control" placeholder="Enter your message here"></textarea>
+                                    <label asp-for="assignment.desc">Description</label>
+                                    <textarea rows="4" class="form-control" placeholder="Enter your message here" asp-for="assignment.desc"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Upload Files</label>
